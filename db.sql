@@ -25,3 +25,16 @@ CREATE TABLE leitores(
     email VARCHAR(100) UNIQUE,
     telefone VARCHAR(20) NOT NULL
 );
+
+CREATE TABLE emprestimos(
+    id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
+    data_emprestimo DATE,
+    data_devolução DATE,
+     id_livro INT,    
+    id_leitor INT,   
+    FOREIGN KEY (id_livro) REFERENCES livros(id_livro),
+    FOREIGN KEY (id_leitor) REFERENCES leitores(id_leitor)
+)
+
+    
+
